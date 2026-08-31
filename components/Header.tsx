@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { business } from "@/lib/site-data";
 
 const links = [
@@ -10,15 +11,17 @@ const links = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--surface-line)] bg-surface/95 backdrop-blur">
-      <div className="section flex items-center justify-between py-4">
-        <Link href="/" className="flex shrink-0 flex-col leading-none">
-          <span className="font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-ink">
-            Young Dong Tofu
-          </span>
-          <span className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-red">
-            Chino Hills, CA
-          </span>
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="section flex items-center justify-between py-5">
+        <Link href="/" className="flex shrink-0 items-center">
+          <Image
+            src="/images/logo.png"
+            alt="Young Dong Tofu"
+            width={280}
+            height={86}
+            priority
+            className="h-12 w-auto brightness-0 invert"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -26,7 +29,7 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-xs font-medium uppercase tracking-[0.15em] text-ink-soft transition-colors hover:text-red"
+              className="text-xs font-medium uppercase tracking-[0.15em] text-white/85 transition-colors hover:text-green"
             >
               {l.label}
             </Link>
@@ -34,11 +37,11 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href={business.phoneHref} className="hidden text-sm font-semibold text-ink sm:block">
+          <a href={business.phoneHref} className="hidden text-sm font-medium text-white sm:block">
             {business.phone}
           </a>
-          <a href={business.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            Get Directions
+          <a href="/menu" className="btn btn-primary">
+            View Menu
           </a>
         </div>
       </div>

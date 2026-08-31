@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 
 const banchan = [
   "Kimchi",
@@ -11,39 +12,48 @@ const banchan = [
 
 export default function BanchanSection() {
   return (
-    <section className="bg-surface-raised py-24">
+    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-24 md:py-32">
       <div className="section grid items-center gap-12 md:grid-cols-2">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-[var(--surface-line)]">
-          <Image
-            src="/images/banchan-spread.jpg"
-            alt="A full table of banchan side dishes and stone-pot bibimbap at Young Dong Tofu"
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <Reveal direction="left">
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image
+              src="/images/banchan-spread.jpg"
+              alt="A full table of banchan side dishes and stone-pot bibimbap at Young Dong Tofu"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
 
         <div>
-          <span className="eyebrow">Banchan, Done Right</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl">A Table Full of Sides</h2>
-          <div className="mt-6 h-px w-16 bg-gradient-to-r from-transparent via-red to-transparent" />
+          <Reveal direction="up">
+            <span className="eyebrow">Banchan, Done Right</span>
+          </Reveal>
+          <Reveal direction="up" delay={150}>
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl">A Table Full of Sides</h2>
+          </Reveal>
 
-          <p className="mt-6 text-ink-soft">
-            Every meal comes with a full spread of banchan, and reviewers
-            consistently call out how generous the refills are — &ldquo;they
-            bring you seconds without you even asking.&rdquo; The cucumbers
-            and seaweed salad are regulars&apos; favorites, and hot buckwheat
-            tea gets refilled right alongside them.
-          </p>
+          <Reveal direction="up" delay={250}>
+            <p className="mt-6 text-ink-soft">
+              Every meal comes with a full spread of banchan, and reviewers
+              consistently call out how generous the refills are — &ldquo;they
+              bring you seconds without you even asking.&rdquo; The cucumbers
+              and seaweed salad are regulars&apos; favorites, and hot buckwheat
+              tea gets refilled right alongside them.
+            </p>
+          </Reveal>
 
-          <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-ink-soft">
-            {banchan.map((item) => (
-              <li key={item} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-red" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <Reveal direction="up" delay={350}>
+            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-ink-soft">
+              {banchan.map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-green" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --surface: #fbf7f2;
-  --surface-raised: #f2e9de;
-  --surface-line: rgba(28, 22, 20, 0.1);
+  --surface: #0e0d0a;
+  --surface-raised: #17150f;
+  --surface-line: rgba(255, 255, 255, 0.1);
 
-  --ink: #1c1614;
-  --ink-soft: #5a4c43;
-  --ink-faint: #92847a;
+  --ink: #f5f3ee;
+  --ink-soft: rgba(245, 243, 238, 0.72);
+  --ink-faint: rgba(245, 243, 238, 0.48);
 
-  --red: #ac3323;
-  --red-soft: rgba(172, 51, 35, 0.1);
+  --green: #3db54a;
+  --green-soft: rgba(61, 181, 74, 0.14);
+  --red: #c23a1f;
+  --red-soft: rgba(194, 58, 31, 0.14);
   --gold: #b8842e;
-  --gold-soft: rgba(184, 132, 46, 0.12);
-  --green: #4c6640;
-  --green-soft: rgba(76, 102, 64, 0.1);
+  --gold-soft: rgba(184, 132, 46, 0.14);
 }
 
 @theme inline {
@@ -24,10 +24,10 @@
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-ink-faint: var(--ink-faint);
-  --color-red: var(--red);
-  --color-red-soft: var(--red-soft);
   --color-green: var(--green);
   --color-green-soft: var(--green-soft);
+  --color-red: var(--red);
+  --color-red-soft: var(--red-soft);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --font-display: var(--font-display);
@@ -48,57 +48,63 @@ html {
 
   h1, h2, h3, h4 {
     font-family: var(--font-display), ui-serif, Georgia, serif;
-    font-weight: 700;
+    font-weight: 600;
     text-wrap: balance;
   }
 }
 
 ::selection {
-  background: var(--red);
-  color: white;
+  background: var(--green);
+  color: #0e0d0a;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  border-radius: 2px;
-  padding: 0.9em 1.9em;
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.01em;
+  padding: 0.85em 1.8em;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
 }
 .btn:active { transform: scale(0.97); }
 
 .btn-primary {
+  background: var(--green);
+  color: #0e0d0a;
+}
+.btn-primary:hover { background: #34a041; }
+
+.btn-secondary {
   background: var(--red);
   color: white;
 }
-.btn-primary:hover { background: #8a2a1c; }
+.btn-secondary:hover { background: #a5321b; }
 
 .btn-ghost {
   background: transparent;
   color: var(--ink);
-  border: 1px solid var(--surface-line);
+  padding-inline: 0;
+  border-bottom: 1px solid var(--surface-line);
 }
-.btn-ghost:hover { border-color: var(--red); color: var(--red); }
+.btn-ghost:hover { border-color: var(--green); color: var(--green); }
 
 .eyebrow {
   font-family: var(--font-body), sans-serif;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--green);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-.divider {
+.divider-line {
   height: 1px;
-  width: 4rem;
-  margin-inline: auto;
-  background: linear-gradient(to right, transparent, var(--red), transparent);
+  width: 3rem;
+  background: var(--green);
 }
 
 .badge {
@@ -112,11 +118,11 @@ html {
   text-transform: uppercase;
 }
 .badge-green { background: var(--green-soft); color: var(--green); }
-.badge-red { background: var(--red-soft); color: var(--red); }
+.badge-red { background: var(--red-soft); color: #e0745c; }
 .badge-gold { background: var(--gold-soft); color: var(--gold); }
 
 .section {
-  max-width: 1120px;
+  max-width: 1160px;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
@@ -127,14 +133,23 @@ html {
 
 .page-header {
   position: relative;
-  padding-block: 5rem 4rem;
+  padding-block: 6rem 4rem;
   text-align: center;
   overflow: hidden;
 }
-.page-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(76, 102, 64, 0.08), transparent 60%);
-  pointer-events: none;
+
+/* Scroll-triggered reveal animations, replicating the reference site's
+   Elementor fadeIn/fadeInUp/fadeInLeft/fadeInRight entrance transitions. */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-up { transform: translateY(28px); }
+.reveal-left { transform: translateX(-32px); }
+.reveal-right { transform: translateX(32px); }
+.reveal-in { opacity: 1; transform: translate(0, 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }

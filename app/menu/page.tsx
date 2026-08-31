@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 import { menu, business } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -15,14 +16,14 @@ const tagClass: Record<string, string> = {
 
 export default function MenuPage() {
   return (
-    <div>
-      <nav className="sticky top-[73px] z-40 border-b border-[var(--surface-line)] bg-surface/95 backdrop-blur">
+    <div className="pt-[84px]">
+      <nav className="sticky top-[84px] z-40 border-b border-[var(--surface-line)] bg-surface/95 backdrop-blur">
         <div className="section flex gap-2 overflow-x-auto py-4">
           {menu.map((cat) => (
             <a
               key={cat.id}
               href={`#${cat.id}`}
-              className="shrink-0 rounded-full border border-[var(--surface-line)] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] text-ink-soft transition-colors hover:border-red hover:text-ink"
+              className="shrink-0 rounded-full border border-[var(--surface-line)] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] text-ink-soft transition-colors hover:border-green hover:text-ink"
             >
               {cat.title}
             </a>
@@ -31,22 +32,27 @@ export default function MenuPage() {
       </nav>
 
       <div className="page-header">
-        <span className="eyebrow">Young Dong Tofu</span>
-        <h1 className="mt-3 text-5xl sm:text-6xl">Menu</h1>
-        <div className="divider mt-6" />
-        <p className="mx-auto mt-6 max-w-md text-ink-soft">
-          Call {business.phone} for pickup, or dine in — every meal comes
-          with a full spread of banchan.
-        </p>
+        <Reveal direction="up">
+          <span className="eyebrow">Young Dong Tofu</span>
+        </Reveal>
+        <Reveal direction="up" delay={150}>
+          <h1 className="mt-4 text-5xl sm:text-6xl md:text-7xl">Our Menu</h1>
+        </Reveal>
+        <Reveal direction="up" delay={250}>
+          <p className="mx-auto mt-6 max-w-md text-ink-soft">
+            Call {business.phone} for pickup, or dine in — every meal comes
+            with a full spread of banchan.
+          </p>
+        </Reveal>
       </div>
 
       <div className="section pb-24">
-        <div className="rounded-sm border border-[var(--surface-line)] bg-surface-raised p-6 sm:p-10 md:p-14">
-          <div className="grid gap-x-12 gap-y-16 md:grid-cols-2">
-            {menu.map((cat) => (
-              <section key={cat.id} id={cat.id} className="scroll-mt-40">
+        <div className="grid gap-x-12 gap-y-16 md:grid-cols-2">
+          {menu.map((cat, ci) => (
+            <Reveal key={cat.id} direction="up" delay={(ci % 2) * 150}>
+              <section id={cat.id} className="scroll-mt-24 border border-[var(--surface-line)] bg-surface-raised p-8 sm:p-10">
                 <h2 className="text-center text-2xl tracking-wide">{cat.title}</h2>
-                <div className="mx-auto mt-3 h-px w-16 bg-gradient-to-r from-transparent via-red to-transparent" />
+                <div className="mx-auto mt-3 divider-line" />
                 {cat.subtitle && (
                   <p className="mx-auto mt-4 max-w-sm text-center text-sm italic text-ink-faint">
                     {cat.subtitle}
@@ -78,8 +84,8 @@ export default function MenuPage() {
                   ))}
                 </ul>
               </section>
-            ))}
-          </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </div>
