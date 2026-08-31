@@ -7,7 +7,7 @@ import FullBleedBanner from "@/components/FullBleedBanner";
 import BrandDivider from "@/components/BrandDivider";
 import SecondIntroSection from "@/components/SecondIntroSection";
 import BanchanSection from "@/components/BanchanSection";
-import ReserveSection from "@/components/ReserveSection";
+import WalkInSection from "@/components/WalkInSection";
 import LocationSection from "@/components/LocationSection";
 import FanFavorites from "@/components/FanFavorites";
 import Testimonials from "@/components/Testimonials";
@@ -25,7 +25,7 @@ export default function Home() {
       <BrandDivider />
       <SecondIntroSection />
       <BanchanSection />
-      <ReserveSection />
+      <WalkInSection />
       <LocationSection />
       <FanFavorites />
       <Testimonials />

@@ -27,7 +27,6 @@ export const business = {
   },
   amenities: [
     "Health Score A",
-    "Takes Reservations",
     "Vegan Options",
     "Good for Groups",
     "Good for Kids",
@@ -239,9 +238,9 @@ export const testimonials: Testimonial[] = [
 
 export const faqs = [
   {
-    question: "Do you take reservations?",
+    question: "Is it walk-in only?",
     answer:
-      "Yes — Young Dong Tofu takes reservations for dine-in. Walk-ins are welcome too, though expect a wait during peak lunch and dinner hours; this is one of Chino Hills' most consistently busy Korean restaurants.",
+      "Yes — Young Dong Tofu is first come, first served. It's one of Chino Hills' most consistently busy Korean restaurants, so expect a short wait during peak lunch and dinner hours.",
   },
   {
     question: "Is banchan (side dishes) included, and can I get it to-go?",

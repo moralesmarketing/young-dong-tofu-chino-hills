@@ -20,18 +20,33 @@ export default function Reveal({
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+
+    // Safety net: if the observer never fires for any reason (layout
+    // thrashing, a tall section whose center never crosses the
+    // threshold, etc.) force the content visible anyway so it can
+    // never get stuck permanently hidden.
+    const fallback = setTimeout(() => setVisible(true), 2000);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
+          clearTimeout(fallback);
           observer.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" }
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    return () => {
+      clearTimeout(fallback);
+      observer.disconnect();
+    };
   }, []);
 
   const dirClass = direction === "in" ? "" : `reveal-${direction}`;
