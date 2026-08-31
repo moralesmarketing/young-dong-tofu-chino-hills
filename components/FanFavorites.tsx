@@ -11,16 +11,16 @@ const tagClass: Record<string, string> = {
 
 export default function FanFavorites() {
   return (
-    <section id="favorites" className="relative py-24 md:py-32">
-      <div className="page-header !pb-16">
+    <section id="favorites" className="relative py-16 md:py-20">
+      <div className="section pb-12 text-center">
         <Reveal direction="up">
           <span className="eyebrow">Fan Favorites</span>
         </Reveal>
         <Reveal direction="up" delay={150}>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl">What Chino Hills Orders Most</h2>
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl">What Chino Hills Orders Most</h2>
         </Reveal>
         <Reveal direction="up" delay={250}>
-          <p className="mx-auto mt-6 max-w-md text-ink-soft">
+          <p className="mx-auto mt-4 max-w-md text-ink-soft">
             Cross-checked against {business.rating.yelp.count} Yelp reviews and
             their Popular Dishes rankings.
           </p>

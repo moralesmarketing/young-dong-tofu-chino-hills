@@ -7,13 +7,15 @@ export default function Footer() {
     <footer className="border-t border-[var(--surface-line)] bg-surface-raised">
       <div className="section grid gap-10 py-16 md:grid-cols-3">
         <div>
-          <Image
-            src="/images/logo.png"
-            alt="Young Dong Tofu"
-            width={280}
-            height={86}
-            className="h-12 w-auto brightness-0 invert"
-          />
+          <div className="inline-flex rounded-md bg-[#fbf7f2] px-3 py-1.5">
+            <Image
+              src="/images/logo.png"
+              alt="Young Dong Tofu"
+              width={280}
+              height={86}
+              className="h-10 w-auto"
+            />
+          </div>
           <p className="mt-5 max-w-xs text-sm text-ink-soft">
             Sizzling soondubu, sizzling galbi, and a table full of banchan —
             Chino Hills&apos; Korean comfort-food institution.

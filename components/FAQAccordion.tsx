@@ -8,7 +8,7 @@ export default function FAQAccordion() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="section py-24 md:py-32">
+    <section className="section py-16 md:py-20">
       <div className="mx-auto max-w-xl text-center">
         <Reveal direction="up">
           <span className="eyebrow">FAQ</span>

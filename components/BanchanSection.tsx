@@ -12,7 +12,7 @@ const banchan = [
 
 export default function BanchanSection() {
   return (
-    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-24 md:py-32">
+    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-16 md:py-20">
       <div className="section grid items-center gap-12 md:grid-cols-2">
         <Reveal direction="left">
           <div className="relative aspect-[4/3] overflow-hidden">

@@ -9,13 +9,13 @@ const Star = () => (
 
 export default function Testimonials() {
   return (
-    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-24 md:py-32">
-      <div className="page-header !pb-16">
+    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-16 md:py-20">
+      <div className="section pb-12 text-center">
         <Reveal direction="up">
           <span className="eyebrow">What Guests Are Saying</span>
         </Reveal>
         <Reveal direction="up" delay={150}>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl">
             {business.rating.yelp.count}+ Reviews, {business.rating.yelp.score} Stars
           </h2>
         </Reveal>

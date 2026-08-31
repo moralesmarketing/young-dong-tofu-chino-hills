@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 export default function IntroSection() {
   return (
-    <section className="section py-24 text-center md:py-32">
+    <section className="section py-16 text-center md:py-20">
       <Reveal direction="up">
         <span className="eyebrow">In Chino Hills</span>
       </Reveal>
@@ -15,13 +15,15 @@ export default function IntroSection() {
       </Reveal>
 
       <Reveal direction="in" delay={300}>
-        <Image
-          src="/images/logo.png"
-          alt="Young Dong Tofu"
-          width={280}
-          height={86}
-          className="mx-auto mt-12 h-16 w-auto"
-        />
+        <div className="mx-auto mt-12 inline-flex rounded-lg bg-[#fbf7f2] px-5 py-3">
+          <Image
+            src="/images/logo.png"
+            alt="Young Dong Tofu"
+            width={280}
+            height={86}
+            className="h-14 w-auto"
+          />
+        </div>
       </Reveal>
 
       <Reveal direction="in" delay={400}>

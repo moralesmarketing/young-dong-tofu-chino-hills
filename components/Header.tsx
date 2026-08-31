@@ -13,14 +13,14 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="section flex items-center justify-between py-5">
-        <Link href="/" className="flex shrink-0 items-center">
+        <Link href="/" className="flex shrink-0 items-center rounded-md bg-[#fbf7f2] px-3 py-1.5">
           <Image
             src="/images/logo.png"
             alt="Young Dong Tofu"
             width={280}
             height={86}
             priority
-            className="h-12 w-auto brightness-0 invert"
+            className="h-10 w-auto"
           />
         </Link>
 

@@ -2,7 +2,7 @@ import Reveal from "@/components/Reveal";
 
 export default function SecondIntroSection() {
   return (
-    <section className="section py-24 text-center md:py-32">
+    <section className="section py-16 text-center md:py-20">
       <Reveal direction="up">
         <span className="eyebrow">Young Dong Tofu</span>
       </Reveal>

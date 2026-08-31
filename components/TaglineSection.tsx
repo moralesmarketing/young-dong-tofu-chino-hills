@@ -3,7 +3,7 @@ import { business } from "@/lib/site-data";
 
 export default function TaglineSection() {
   return (
-    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-16 text-center">
+    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-12 text-center">
       <div className="section">
         <Reveal direction="up">
           <p className="mx-auto max-w-xl text-lg text-ink-soft sm:text-xl">

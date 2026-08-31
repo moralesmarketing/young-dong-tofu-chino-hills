@@ -2,7 +2,7 @@ import Reveal from "@/components/Reveal";
 
 export default function BrandDivider() {
   return (
-    <div className="bg-surface py-16">
+    <div className="bg-surface py-10">
       <Reveal direction="in">
         <div className="flex items-center justify-center gap-6">
           <span className="divider-line w-24" />
