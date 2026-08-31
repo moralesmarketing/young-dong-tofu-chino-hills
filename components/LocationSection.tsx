@@ -3,7 +3,7 @@ import { business } from "@/lib/site-data";
 
 export default function LocationSection() {
   return (
-    <section id="location" className="py-16 md:py-20">
+    <section id="location" className="py-12 md:py-16">
       <div className="section pb-12 text-center">
         <Reveal direction="up">
           <span className="eyebrow">Visit Us</span>

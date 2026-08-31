@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 export default function IntroSection() {
   return (
-    <section className="section py-16 text-center md:py-20">
+    <section className="section py-12 text-center md:py-16">
       <Reveal direction="up">
         <span className="eyebrow">In Chino Hills</span>
       </Reveal>

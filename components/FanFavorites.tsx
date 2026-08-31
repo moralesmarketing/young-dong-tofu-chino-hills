@@ -11,7 +11,7 @@ const tagClass: Record<string, string> = {
 
 export default function FanFavorites() {
   return (
-    <section id="favorites" className="relative py-16 md:py-20">
+    <section id="favorites" className="relative py-12 md:py-16">
       <div className="section pb-12 text-center">
         <Reveal direction="up">
           <span className="eyebrow">Fan Favorites</span>

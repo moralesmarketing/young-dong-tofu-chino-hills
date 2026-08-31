@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 export default function DishSpotlight() {
   return (
-    <section className="section py-16 md:py-20">
+    <section className="section py-12 md:py-16">
       <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
         <Reveal direction="left">
           <div className="relative aspect-[4/5] overflow-hidden">

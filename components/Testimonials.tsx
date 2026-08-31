@@ -9,7 +9,7 @@ const Star = () => (
 
 export default function Testimonials() {
   return (
-    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-16 md:py-20">
+    <section className="border-y border-[var(--surface-line)] bg-surface-raised py-12 md:py-16">
       <div className="section pb-12 text-center">
         <Reveal direction="up">
           <span className="eyebrow">What Guests Are Saying</span>
